@@ -2,7 +2,14 @@
   "name": "@demo/shared",
   "private": true,
   "version": "0.0.0",
-  "main": "./src/export.ts",
+  "main": "./dist/shared.es.js",
+  "module": "./dist/shared.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/shared.es.js",
+      "require": "./dist/shared.umd.js"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
@@ -15,6 +22,7 @@
     "@vitejs/plugin-vue": "^2.3.4",
     "typescript": "^4.5.4",
     "vite": "^2.9.15",
+    "vite-dts": "^1.0.4",
     "vue-tsc": "^0.34.7"
   }
 }
